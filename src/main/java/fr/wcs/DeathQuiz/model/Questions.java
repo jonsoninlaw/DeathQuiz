@@ -17,14 +17,13 @@ public class Questions {
         this.movie1 = generateMovie(this.movie1);
         this.movie1.chooseQuestion();
         this.movie1.generateYearAnswers();
+        this.movie1.generateDirectorAnswers();
+        this.movie1.generateCountryAnswers();
+        this.movie1.setRightAnswers();
     }
 
     public Movie getMovie1() {
         return movie1;
-    }
-
-    public void setMovie1(Movie movie1) {
-        this.movie1 = movie1;
     }
 
     private Movie generateMovie(Movie movie) {
