@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HackloweenController {
 
-    private static Questions questions = new Questions();
+    //private static Questions questions = new Questions();
+
     private static final String HACKLOWEEN_URL = "https://hackathon-wild-hackoween.herokuapp.com/";
 
     @GetMapping("/")
@@ -20,10 +21,10 @@ public class HackloweenController {
     @GetMapping("/question1")
     @ResponseBody
     public String question1(Model out) {
-
+        Questions questions = new Questions();
         out.addAttribute(questions.getMovie1());
 
-        return questions.getMovie1().getTitle() + " ------- " + questions.getMovie1().getQuestion() + " ------- " + questions.getMovie1().getAnswers();
+        return questions.getMovie1().getTitle() + " ------- " + questions.getMovie1().getQuestion() + " ------- " + questions.getMovie1().getAnswers() + " --- The right answer is : " + questions.getMovie1().getRightAnswers();
     }
 
 }
