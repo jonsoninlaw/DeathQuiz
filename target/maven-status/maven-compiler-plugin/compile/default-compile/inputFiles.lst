@@ -1,5 +1,12 @@
+<<<<<<< HEAD
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/DeathQuizApplication.java
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Questions.java
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movie.java
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/controller/HackloweenController.java
+=======
 /home/wilder/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movies.java
 /home/wilder/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/controller/HackloweenController.java
 /home/wilder/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movie.java
 /home/wilder/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Questions.java
 /home/wilder/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/DeathQuizApplication.java
+>>>>>>> master
