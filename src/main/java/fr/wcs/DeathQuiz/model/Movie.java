@@ -67,7 +67,7 @@ public class Movie {
         Random random = new Random();
         this.directorAnswers.add(this.director.replace("_", " "));
         for (int i = 0; i < 3; i++) {
-            this.directorAnswers.add(allDirectors[random.nextInt(82)]);
+            this.directorAnswers.add(allDirectors[random.nextInt(82)].replace("_", " "));
         }
         Collections.shuffle(directorAnswers);
     }
@@ -76,7 +76,7 @@ public class Movie {
         Random random = new Random();
         this.countryAnswers.add(this.country.replace("_", " "));
         for (int i = 0; i < 3; i++) {
-            this.countryAnswers.add(allCountries[random.nextInt(82)]);
+            this.countryAnswers.add(allCountries[random.nextInt(82)].replace("_", " "));
         }
         Collections.shuffle(countryAnswers);
     }
