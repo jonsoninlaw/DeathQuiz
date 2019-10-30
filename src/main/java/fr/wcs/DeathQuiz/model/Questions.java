@@ -80,7 +80,7 @@ public class Questions {
 
             for (JsonNode movie : root.get("movies") ) {
                 System.out.println("movie: " + movie.get("director").asText());
-                movies.setDirector(count, movie.get("director").asText());
+                movies.setDirector(count, movie.get("director").asText().replace("_", " "));
                 count++;
             }
             count = 0;
@@ -92,13 +92,13 @@ public class Questions {
             count = 0;
             for (JsonNode movie : root.get("movies") ) {
                 System.out.println("country: " + movie.get("country").asText());
-                movies.setCountry(count, movie.get("country").asText());
+                movies.setCountry(count, movie.get("country").asText().replace("_", " "));
                 count++;
             }
             count = 0;
             for (JsonNode movie : root.get("movies") ) {
                 System.out.println("title: " + movie.get("title").asText());
-                movies.setTitle(count, movie.get("title").asText());
+                movies.setTitle(count, movie.get("title").asText().replace("_", " "));
                 count++;
             }
             count = 0;
