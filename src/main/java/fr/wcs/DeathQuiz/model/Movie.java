@@ -37,6 +37,8 @@ public class Movie {
     }
 
     public Object getAnswers() {
+        for (int i = 0; i < 3; i++) {
+        }
         return answers[questionIndex];
     }
 
@@ -63,7 +65,7 @@ public class Movie {
 
     public void generateDirectorAnswers() {
         Random random = new Random();
-        this.directorAnswers.add(this.director);
+        this.directorAnswers.add(this.director.replace("_", " "));
         for (int i = 0; i < 3; i++) {
             this.directorAnswers.add(this.wrongDirectorAnswers[i]);
         }
@@ -72,7 +74,7 @@ public class Movie {
 
     public void generateCountryAnswers() {
         Random random = new Random();
-        this.countryAnswers.add(this.country);
+        this.countryAnswers.add(this.country.replace("_", " "));
         for (int i = 0; i < 3; i++) {
             this.countryAnswers.add(this.wrongCountryAnswers[i]);
         }

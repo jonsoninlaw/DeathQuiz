@@ -2,6 +2,7 @@ package fr.wcs.DeathQuiz.model;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.ui.Model;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
@@ -52,4 +53,6 @@ public class Questions {
         }
         return movie;
     }
+
 }
+

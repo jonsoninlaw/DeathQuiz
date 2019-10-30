@@ -1,4 +1,5 @@
-/home/wilder/hackaton/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/DeathQuizApplication.java
-/home/wilder/hackaton/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/controller/HackloweenController.java
-/home/wilder/hackaton/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Questions.java
-/home/wilder/hackaton/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movie.java
+/home/wilder/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movies.java
+/home/wilder/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/controller/HackloweenController.java
+/home/wilder/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movie.java
+/home/wilder/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Questions.java
+/home/wilder/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/DeathQuizApplication.java
