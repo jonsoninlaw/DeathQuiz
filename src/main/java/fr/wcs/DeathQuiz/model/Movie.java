@@ -37,6 +37,8 @@ public class Movie {
     }
 
     public Object getAnswers() {
+        for (int i = 0; i < 3; i++) {
+        }
         return answers[questionIndex];
     }
 
@@ -52,29 +54,29 @@ public class Movie {
         this.question = questions[questionIndex];
     }
 
-    public void generateYearAnswers() {
+    public void generateYearAnswers(int[] allYears) {
         Random random = new Random();
         this.yearAnswers.add(this.year);
         for (int i = 0; i < 3; i++) {
-            this.yearAnswers.add(this.wrongYearAnswers[i]);
+            this.yearAnswers.add(allYears[random.nextInt(82)]);
         }
         Collections.shuffle(yearAnswers);
     }
 
-    public void generateDirectorAnswers() {
+    public void generateDirectorAnswers(String[] allDirectors) {
         Random random = new Random();
-        this.directorAnswers.add(this.director);
+        this.directorAnswers.add(this.director.replace("_", " "));
         for (int i = 0; i < 3; i++) {
-            this.directorAnswers.add(this.wrongDirectorAnswers[i]);
+            this.directorAnswers.add(allDirectors[random.nextInt(82)]);
         }
         Collections.shuffle(directorAnswers);
     }
 
-    public void generateCountryAnswers() {
+    public void generateCountryAnswers(String[] allCountries) {
         Random random = new Random();
-        this.countryAnswers.add(this.country);
+        this.countryAnswers.add(this.country.replace("_", " "));
         for (int i = 0; i < 3; i++) {
-            this.countryAnswers.add(this.wrongCountryAnswers[i]);
+            this.countryAnswers.add(allCountries[random.nextInt(82)]);
         }
         Collections.shuffle(countryAnswers);
     }
