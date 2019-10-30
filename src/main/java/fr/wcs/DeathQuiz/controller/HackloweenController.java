@@ -25,12 +25,11 @@ public class HackloweenController {
     }
 
     @GetMapping("/question1")
-    @ResponseBody
     public String question1(Model out) {
         Questions questions = new Questions();
-        out.addAttribute(questions.getMovie1());
-
-        return questions.getMovie1().getTitle() + " ------- " + questions.getMovie1().getQuestion() + " ------- " + questions.getMovie1().getAnswers() + " --- The right answer is : " + questions.getMovie1().getRightAnswers();
+        out.addAttribute("question", questions.getMovie1());
+        return "question";
+        //return questions.getMovie1().getTitle() + " ------- " + questions.getMovie1().getQuestion() + " ------- " + questions.getMovie1().getAnswers() + " --- The right answer is : " + questions.getMovie1().getRightAnswers();
 
     }
 
