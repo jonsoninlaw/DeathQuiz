@@ -17,13 +17,13 @@ public class HackloweenController {
 
     private static final String HACKLOWEEN_URL = "https://hackathon-wild-hackoween.herokuapp.com/";
 
-    /*@GetMapping("/")
+    @GetMapping("/")
     public String index() {
         return "index";
-    }*/
+    }
 
     @GetMapping("/question")
-    @ResponseBody
+
     public String question() {
 
         WebClient webClient = WebClient.create(HACKLOWEEN_URL);
@@ -49,7 +49,7 @@ public class HackloweenController {
             e.printStackTrace();
         }
 
-        return "Hello";
+        return "question";
     }
 
 }
