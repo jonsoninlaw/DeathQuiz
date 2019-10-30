@@ -10,20 +10,11 @@
 
 <body>
 <div class="question">
-    <img class="image" th:src="images/paranormal.jpg" alt="" />
-    <h1 class="questionh1" th:text="|En quelle année est sortie ce film ?|">En quelle année est sortie ce film ?</h1>
-    <div class="allbtn">
+    <img class="image" th:src="${question.posterUrl}" alt="" />
+    <h1 class="questionh1" th:text="${question.question}">En quelle année est sortie ce film ?</h1>
+    <div th:each="answerContainer : ${question.answers}" class="allbtn">
         <div class="Btn">
-            <button class="button1 choice" th:text="|moi|">L'année de ma naissance</button>
-        </div>
-        <div class="Btn">
-            <button class="button1 choice">2010</button>
-        </div>
-        <div class="Btn">
-            <button class="button1 choice">2012</button>
-        </div>
-        <div class="Btn">
-            <button class="button1 choice">0102</button>
+            <button class="button1 choice" th:text="${answerContainer}">L'année de ma naissance</button>
         </div>
     </div>
 </div>
