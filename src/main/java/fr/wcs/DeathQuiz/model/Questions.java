@@ -15,6 +15,8 @@ public class Questions {
 
     public Questions() {
         this.movie1 = generateMovie(this.movie1);
+        this.movie1.chooseQuestion();
+        this.movie1.generateYearAnswers();
     }
 
     public Movie getMovie1() {

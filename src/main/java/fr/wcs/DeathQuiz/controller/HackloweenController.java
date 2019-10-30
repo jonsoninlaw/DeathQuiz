@@ -21,10 +21,9 @@ public class HackloweenController {
     @ResponseBody
     public String question1(Model out) {
 
+        out.addAttribute(questions.getMovie1());
 
-    out.addAttribute(questions.getMovie1());
-
-        return questions.getMovie1().getTitle();
+        return questions.getMovie1().getTitle() + " ------- " + questions.getMovie1().getQuestion() + " ------- " + questions.getMovie1().getAnswers();
     }
 
 }
