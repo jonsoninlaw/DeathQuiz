@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 /home/wilder/Documents/Hacka 1/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/controller/HackloweenController.java
 /home/wilder/Documents/Hacka 1/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/DeathQuizApplication.java
+=======
+/home/wilder/hackaton/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/DeathQuizApplication.java
+/home/wilder/hackaton/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/controller/HackloweenController.java
+/home/wilder/hackaton/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Questions.java
+/home/wilder/hackaton/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movie.java
+>>>>>>> 66bcabcf8a71b6a1e3e8dedffaabe563073ac18b
