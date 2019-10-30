@@ -73,11 +73,12 @@ p {
 
 .allbtn {
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: row;
     justify-content: space-between;
 }
 .choice {
     font-family: Montserrat, serif;
+
 }
 .questionh1 {
     color:rgb(238, 238, 238);
@@ -85,4 +86,8 @@ p {
     margin-bottom: 70px;
     font-family: 'Times New Roman', serif;
     margin-top: 5vh;
+}
+
+.answers {
+    display: flex;
 }

@@ -12,11 +12,16 @@
 <div class="question">
     <img class="image" th:src="${question.posterUrl}" alt="" />
     <h1 class="questionh1" th:text="${question.question}">En quelle année est sortie ce film ?</h1>
+<div class="answers">
     <div th:each="answerContainer : ${question.answers}" class="allbtn">
-        <div class="Btn">
-            <button class="button1 choice" th:text="${answerContainer}">L'année de ma naissance</button>
-        </div>
+    <div class="Btn">
+        <button class="button1 choice" th:text="${answerContainer}">L'année de ma naissance</button>
     </div>
+</div>
+</div>
+
+
+
 </div>
 </body>
 </html>
