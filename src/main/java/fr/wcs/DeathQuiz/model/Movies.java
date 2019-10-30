@@ -1,15 +1,15 @@
 package fr.wcs.DeathQuiz.model;
 
 public class Movies {
-    private String[] directors;
-    private String[] title;
-    private String[] country;
-    private int[] year;
-    private Movies movies;
+    private String[] director = new String[82];
+    private String[] title = new String[82];
+    private String[] country = new String[82];
+    private int[] year = new int[82];
 
     public Movies() {}
+
     public String[] getDirector() {
-        return directors;
+        return director;
     }
 
     public String[] getTitle() {
@@ -25,7 +25,7 @@ public class Movies {
     }
 
     public void setDirector(int index, String director) {
-        this.directors[index] = director;
+        this.director[index] = director;
     }
 
     public void setTitle(int index, String title) {
