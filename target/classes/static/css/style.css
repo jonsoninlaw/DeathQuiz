@@ -9,12 +9,25 @@
 
 body {
     background: url("../images/back.jpg") no-repeat center center fixed;
+    z-index: 1;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     color:#6e9434;
     height: 100vh;
+}
+
+.popUp {
+    z-index: 3;
+    object-fit: cover;
+    position: absolute;
+
+}
+
+.allbtn:active {
+    background-image: url("https://images-eu.ssl-images-amazon.com/images/I/81G%2BD63CtsL.png");
+    background-size: 1000px;
 }
 
 h1, h2 {
