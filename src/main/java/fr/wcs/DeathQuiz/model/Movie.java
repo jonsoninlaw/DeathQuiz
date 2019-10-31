@@ -21,9 +21,9 @@ public class Movie {
     private List<String> yearAnswers = new ArrayList<>();
     private List<String> directorAnswers = new ArrayList<>();
     private List<String> countryAnswers = new ArrayList<>();
-    private String[] fakeYearAnswers = {"It was never released", "2023", "Some day", "Who knows", "19999", "23401375", "1999 before J.C", "In the year 2525"};
-    private String[] fakeDirectorAnswers = {"Homer Simpson", "Wallace and Gromit", "John Smith", "John Doe", "Jonathan Gendre", "Jacky and Michel", "Michael Jackson", "You", "Some talented person", "Not you", "Someone"};
-    private String[] fakeCountryAnswers = {"Neverland", "Asgard", "Nevermindland", "Lala Land", "Mushroom Kingdom", "Hyrule", "Babar's Kingdom", "Groland", "Disneyland"};
+    private String[] fakeYearAnswers = {"It was never released", "2023", "Who knows...", "666", "nul", "1999 before J.C", "In the year 2525"};
+    private String[] fakeDirectorAnswers = {"Homer Simpson", "Nabila", "Marie V", "Marine impératrice", "404 error", "Wallace and Gromit", "John Doe", "Jonathan Gendre", "Jacky and Michel", "You", "Bastien", "Not you"};
+    private String[] fakeCountryAnswers = {"Mordor", "Asgard", "Neverland", "Lala Land", "Mushroom Kingdom", "Hyrule", "Groland", "Disneyland"};
     private String[] rightAnswers = new String[3];
     private List<String>[] answers = new List[]{yearAnswers, directorAnswers, countryAnswers};
 
