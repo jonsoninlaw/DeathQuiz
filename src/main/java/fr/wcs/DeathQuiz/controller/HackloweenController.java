@@ -75,21 +75,15 @@ public class HackloweenController {
     }
 
     @GetMapping("/endGame")
-    public String endGame(Model out, @RequestParam(name = "endgame", defaultValue = "0") List<Integer> answers) {
-
-        if (answers.size() == 1) {
-            answers.clear();
-        }
-        for (int elt : answers) {
-            System.out.println(elt);
-        }
-        for (int elt : questions.getWin()) {
-            System.out.println("to win : " + elt);
+    public String endGame(Model out, @RequestParam(name = "endgame", defaultValue = "99") List<Integer> answers) {
+        out.addAttribute("question", questions);
+        if (answers.get(0) == 99) {
+            return "endgame";
         }
 
         boolean win = false;
 
-        if (answers.size() != 0) {
+        if (answers.size() == 10) {
             for (int i = 0; i < 10; i++) {
                 if (!questions.getWin().get(i).equals(answers.get(i))) {
                     win = false;
@@ -99,9 +93,8 @@ public class HackloweenController {
                 }
             }
         }
-        out.addAttribute("question", questions);
 
-        return win ? "index" : "endgame";
+        return win ? "win" : "loose";
 
     }
 }

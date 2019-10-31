@@ -185,7 +185,7 @@ p {
 
 .endgame_checkbox:checked + .endgame_label {
     color: #000000;
-    background-color: rgb(216, 31, 31);
+    background-color: white;
 }
 
 .faux {
