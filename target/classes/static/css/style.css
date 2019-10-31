@@ -109,6 +109,51 @@ p {
     cursor: pointer;
 }
 
+.endgame_container div:nth-child(16n) .endgame_label,
+.endgame_container div:nth-child(16n - 1) .endgame_label,
+.endgame_container div:nth-child(16n - 2) .endgame_label,
+.endgame_container div:nth-child(16n - 3) .endgame_label {
+    background-color: #6e9434;
+}
+
+.endgame_container div:nth-child(16n - 4) .endgame_label,
+.endgame_container div:nth-child(16n - 5) .endgame_label,
+.endgame_container div:nth-child(16n - 6) .endgame_label,
+.endgame_container div:nth-child(16n - 7) .endgame_label {
+    background-color: blue;
+}
+
+.endgame_container div:nth-child(16n - 8) .endgame_label,
+.endgame_container div:nth-child(16n - 9) .endgame_label,
+.endgame_container div:nth-child(16n - 10) .endgame_label,
+.endgame_container div:nth-child(16n - 11) .endgame_label {
+    background-color: orangered;
+}
+
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n) .endgame_label,
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 1) .endgame_label,
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 2) .endgame_label,
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 3) .endgame_label {
+    color: #000000;
+    background-color: rgb(216, 31, 31);
+}
+
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 4) .endgame_label,
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 5) .endgame_label,
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 6) .endgame_label,
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 7) .endgame_label {
+    color: #000000;
+    background-color: rgb(216, 31, 31);
+}
+
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 8) .endgame_label,
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 9) .endgame_label,
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 10) .endgame_label,
+.endgame_checkbox:checked + .endgame_container div:nth-child(16n - 11) .endgame_label {
+    color: #000000;
+    background-color: rgb(216, 31, 31);
+}
+
 .endgame_checkbox {
     display: none;
 }
