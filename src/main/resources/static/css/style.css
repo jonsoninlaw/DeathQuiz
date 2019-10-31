@@ -29,11 +29,13 @@ p {
 
 }
 
-.parchemin {
+.parchemin, p {
     display: flex;
     text-align: center;
     flex-direction: column;
-    color:#6e9434;
+    color:rgb(238, 238, 238);
+    text-shadow:1px 1px #da1818;
+    font-family: 'Times New Roman', serif;
 }
 
 .game-info {

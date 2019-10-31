@@ -54,8 +54,6 @@ startGame() {
 }
 
 
-
-
 startCountdown() {
    return setInterval(() => {
        this.timeRemaining--;
@@ -88,7 +86,7 @@ if (document.readyState == 'loading') {
 function ready() {
    let overlays = Array.from(document.getElementsByClassName('overlay-text'));
 
-   let game = new endGame(100);
+   let game = new endGame(50);
 
    overlays.forEach(overlay => {
        overlay.addEventListener('click', () => {

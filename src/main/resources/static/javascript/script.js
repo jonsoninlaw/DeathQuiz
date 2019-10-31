@@ -54,8 +54,6 @@ startGame() {
 }
 
 
-
-
 startCountdown() {
    return setInterval(() => {
        this.timeRemaining--;

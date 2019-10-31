@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" />
     <title>DeathQuizz</title>
 </head>
-<body>
-<h1 th:text="|Death Quizz|">title</h1>
+<body class="win">
+<h1 th:text="|Bien joué !|">title</h1>
 <div class="parchemin">
-    <p th:text="|Attention|"> Warning !</p>
-    <p th:text="|Pauvre fou faites demi-tour tant que vous le pouvez ! |">En entrant sur DeathQuizz, vous vous engagez</p>
     <div class="Btn">
-        <a th:href="@{/question}"><button class="button1">Je suis inconscient</button></a>
+        <a th:href="@{/question}"><button class="button1">Rejouer :)</button></a>
     </div>
 </div>
 </body>
