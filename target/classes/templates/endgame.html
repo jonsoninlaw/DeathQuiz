@@ -5,12 +5,33 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
     <link href="../static/css/style.css" rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script src="script.js" th:src="@{/javascript/script.js}" async></script>
     <title>DeathQuizz</title>
 </head>
 
 <body>
 <div class="question">
+
+    <div class="overlay-text visible">
+        Click to Start the Halloween Burger
+    </div>
+    <div id="game-over-text" class="overlay-text">
+        GAME OVER
+        <span class="overlay-text-small">Click to Restart</span>
+    </div>
+    <div id="victory-text" class="overlay-text">
+        VICTORY
+        <span class="overlay-text-small">Click to Restart</span>
+    </div>
+
     <h1 class="questionh1">Can you remind them all ?</h1>
+
+    <div class="game-info-container">
+        <div class="game-info">
+            Time <span id="time-remaining">50</span>
+        </div>
+    </div>
+
     <div class="answers">
         <div class="allbtn">
             <div class="Btn">
