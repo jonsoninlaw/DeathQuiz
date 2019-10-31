@@ -55,9 +55,9 @@ public class Movie {
         this.yearAnswers.add(this.year + "");
         this.yearAnswers.add(this.fakeYearAnswers[random.nextInt(fakeYearAnswers.length)]);
         for (int i = 0; i < 2; i++) {
-            int randYear = allYears[random.nextInt(82)];
+            String randYear = allYears[random.nextInt(82)] + "";
             while (yearAnswers.contains(randYear)) {
-                randYear = allYears[random.nextInt(82)];
+                randYear = allYears[random.nextInt(82)] + "";
             }
             this.yearAnswers.add(randYear + "");
         }
