@@ -7,13 +7,18 @@
     font-family: 'Halloween too', serif;
 }
 
+html {
+    box-shadow: -5px 10px 100px 34px rgba(0,0,0,0.72) inset;
+    height: 100%;
+}
+
 body {
     background: url("../images/back.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    color:#6e9434;
+    color: #e1ff0b;
     cursor: url("Assets/Cursors/Ghost.cur"), auto;
 }
 

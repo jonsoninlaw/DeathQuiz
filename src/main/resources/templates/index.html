@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" />
-    <title>DeathQuizz</title>
+    <title>DeathQuiz</title>
 </head>
 <body>
-<h1 th:text="|Death Quizz|">title</h1>
+<h1 class="questionh1" style="font-family: Creepster, serif; font-size:4em; margin-top: 30px; margin-bottom: 30px" th:text="|Death Quizz|">title</h1>
 <div class="parchemin">
-    <p th:text="|Attention|"> Warning !</p>
-    <p th:text="|Pauvre fou faites demi-tour tant que vous le pouvez ! |">En entrant sur DeathQuizz, vous vous engagez</p>
+    <p class="questionh1" style="font-size:2em" th:text="|Attention !|"> Attention !</p>
+    <p class="questionh1" style="font-size:2em" th:text="|En entrant sur DeathQuizz, vous vous engagez à ne pas poursuivre en justice DeathQuizz suite à des séquelles physiques et/ou psychologiques. En appuyant sur le bouton ci-dessous, vous entrez en enfer.|">En entrant sur DeathQuizz, vous vous engagez</p>
     <div class="Btn">
         <a th:href="@{/question}"><button class="button1">Je suis inconscient</button></a>
     </div>
+
 </div>
 </body>
 </html>

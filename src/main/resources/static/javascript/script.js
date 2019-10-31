@@ -86,7 +86,7 @@ if (document.readyState == 'loading') {
 function ready() {
    let overlays = Array.from(document.getElementsByClassName('overlay-text'));
 
-   let game = new endGame(50);
+   let game = new endGame(60);
 
    overlays.forEach(overlay => {
        overlay.addEventListener('click', () => {

@@ -17,7 +17,7 @@ public class Movie {
 
     private String question;
     private int questionIndex;
-    private String[] questions = {"What's this movie's release date ?", "Who directed this movie ?", "Do you know where this movie comes from ?"};
+    private String[] questions = {"En quelle année est sortie ce film ?", "Qui a réalisé ce film ?", "Quel est le pays d'origine de ce film ?"};
     private List<String> yearAnswers = new ArrayList<>();
     private List<String> directorAnswers = new ArrayList<>();
     private List<String> countryAnswers = new ArrayList<>();
