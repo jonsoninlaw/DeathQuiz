@@ -54,10 +54,6 @@ public class Questions {
         return allAnswers;
     }
 
-    public String[] getAnswersId() {
-        return answersId;
-    }
-
     public Movie[] getMoviesList() {
         return moviesList;
     }
