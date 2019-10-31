@@ -22,12 +22,8 @@ public class Movie {
     private List<String> directorAnswers = new ArrayList<>();
     private List<String> countryAnswers = new ArrayList<>();
     //private String[] funAnswers = {""};
-    private int[] wrongYearAnswers = {1999, 55, 2222};
-    private String[] wrongDirectorAnswers = {"Steve Williams", "Roger Rabbit", "Jackie et Michel"};
-    private String[] wrongCountryAnswers = {"Transilvania", "Disneyland", "Laponie"};
     private Object[] rightAnswers = new Object[3];
     private Object[] answers = {yearAnswers, directorAnswers, countryAnswers};
-    private Object[] wrongAnswers = {wrongYearAnswers, wrongDirectorAnswers, wrongCountryAnswers};
 
     public Movie() {
     }
@@ -44,8 +40,8 @@ public class Movie {
 
     public void setRightAnswers() {
         this.rightAnswers[0] = this.year;
-        this.rightAnswers[1] = this.director;
-        this.rightAnswers[2] = this.country;
+        this.rightAnswers[1] = this.director.replace("_", " ");
+        this.rightAnswers[2] = this.country.replace("_", " ");
     }
 
     public void chooseQuestion() {
@@ -58,7 +54,11 @@ public class Movie {
         Random random = new Random();
         this.yearAnswers.add(this.year);
         for (int i = 0; i < 3; i++) {
-            this.yearAnswers.add(allYears[random.nextInt(82)]);
+            int randYear = allYears[random.nextInt(82)];
+            while (yearAnswers.contains(randYear)) {
+                randYear = allYears[random.nextInt(82)];
+            }
+            this.yearAnswers.add(randYear);
         }
         Collections.shuffle(yearAnswers);
     }
@@ -67,7 +67,11 @@ public class Movie {
         Random random = new Random();
         this.directorAnswers.add(this.director.replace("_", " "));
         for (int i = 0; i < 3; i++) {
-            this.directorAnswers.add(allDirectors[random.nextInt(82)].replace("_", " "));
+            String randDirector = allDirectors[random.nextInt(82)].replace("_", " ");
+            while (directorAnswers.contains(randDirector)) {
+                randDirector = allDirectors[random.nextInt(82)].replace("_", " ");
+            }
+            this.directorAnswers.add(randDirector);
         }
         Collections.shuffle(directorAnswers);
     }
@@ -76,7 +80,11 @@ public class Movie {
         Random random = new Random();
         this.countryAnswers.add(this.country.replace("_", " "));
         for (int i = 0; i < 3; i++) {
-            this.countryAnswers.add(allCountries[random.nextInt(82)].replace("_", " "));
+            String randCountry = allCountries[random.nextInt(82)].replace("_", " ");
+            while (countryAnswers.contains(randCountry)) {
+                randCountry = allCountries[random.nextInt(82)].replace("_", " ");
+            }
+            this.countryAnswers.add(randCountry);
         }
         Collections.shuffle(countryAnswers);
     }
