@@ -2,8 +2,10 @@ package fr.wcs.DeathQuiz.model;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.ui.Model;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.w3c.dom.ls.LSOutput;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;
@@ -14,21 +16,34 @@ import java.util.Random;
 public class Questions {
 
     private static final String HACKLOWEEN_URL = "https://hackathon-wild-hackoween.herokuapp.com/";
-    private Movie movie1;
+    private Movie movie1 = generateMovie(this.movie1);
+    private Movie movie2 = generateMovie(this.movie2);
+    private Movie movie3 = generateMovie(this.movie3);
+    private Movie movie4 = generateMovie(this.movie4);
+    private Movie movie5 = generateMovie(this.movie5);
     private Movies movies;
+    private Movie[] moviesList = {movie1, movie2, movie3, movie4, movie5};
 
     public Questions() {
-        this.movie1 = generateMovie(this.movie1);
         movies = generateAllMovies(movies);
-        this.movie1.chooseQuestion();
-        this.movie1.generateYearAnswers(movies.getYear());
-        this.movie1.generateDirectorAnswers(movies.getDirector());
-        this.movie1.generateCountryAnswers(movies.getCountry());
-        this.movie1.setRightAnswers();
+        for (Movie movie : moviesList) {
+            movie.chooseQuestion();
+            movie.generateYearAnswers(movies.getYear());
+            movie.generateDirectorAnswers(movies.getDirector());
+            movie.generateCountryAnswers(movies.getCountry());
+            movie.setRightAnswers();
+        }
+    }
+
+    public Movie[] getMoviesList() {
+        return moviesList;
     }
 
     public Movie getMovie1() {
         return movie1;
+    }
+    public Movie getMovie2() {
+        return movie2;
     }
 
     private Movie generateMovie(Movie movie) {
@@ -79,25 +94,21 @@ public class Questions {
             int count = 0;
 
             for (JsonNode movie : root.get("movies") ) {
-                System.out.println("movie: " + movie.get("director").asText());
                 movies.setDirector(count, movie.get("director").asText().replace("_", " "));
                 count++;
             }
             count = 0;
             for (JsonNode movie : root.get("movies") ) {
-                System.out.println("year: " + movie.get("year").asInt());
                 movies.setYear(count, movie.get("year").asInt());
                 count++;
             }
             count = 0;
             for (JsonNode movie : root.get("movies") ) {
-                System.out.println("country: " + movie.get("country").asText());
                 movies.setCountry(count, movie.get("country").asText().replace("_", " "));
                 count++;
             }
             count = 0;
             for (JsonNode movie : root.get("movies") ) {
-                System.out.println("title: " + movie.get("title").asText());
                 movies.setTitle(count, movie.get("title").asText().replace("_", " "));
                 count++;
             }

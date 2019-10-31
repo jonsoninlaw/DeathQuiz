@@ -1,5 +1,6 @@
 package fr.wcs.DeathQuiz.controller;
 
+import fr.wcs.DeathQuiz.model.Movie;
 import fr.wcs.DeathQuiz.model.Questions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HackloweenController {
 
     private static Questions questions = new Questions();
-
+    private static int currentQuestion = 0;
     private static final String HACKLOWEEN_URL = "https://hackathon-wild-hackoween.herokuapp.com/";
 
     @GetMapping("/")
@@ -25,9 +26,14 @@ public class HackloweenController {
 
         String right = "none";
         String wrong = "none";
-        Object rightAnswer = questions.getMovie1().getRightAnswers() + "";
-        System.out.println(rightAnswer);
-        System.out.println(answer);
+        Object rightAnswer;
+        Movie movie = questions.getMoviesList()[currentQuestion];
+        if (currentQuestion == 0) {
+            rightAnswer = questions.getMoviesList()[0].getRightAnswers() + "";
+        }
+        else {
+            rightAnswer = questions.getMoviesList()[currentQuestion].getRightAnswers() + "";
+        }
         if (answer.length() != 0) {
             if (rightAnswer.equals(answer)) {
                 right = "block";
@@ -36,10 +42,28 @@ public class HackloweenController {
                 wrong = "block";
             }
         }
+        System.out.println(rightAnswer);
+        System.out.println(answer);
 
-        out.addAttribute("question", questions.getMovie1());
+
+        out.addAttribute("question", movie);
         out.addAttribute("right", right);
         out.addAttribute("wrong", wrong);
+        return "question";
+
+    }
+
+    @GetMapping("/nextQuestion")
+    public String nextQuestion(Model test) {
+
+        String right = "none";
+        String wrong = "none";
+        currentQuestion ++;
+        Movie movie = questions.getMoviesList()[currentQuestion];
+
+        test.addAttribute("question", movie);
+        test.addAttribute("right", right);
+        test.addAttribute("wrong", wrong);
         return "question";
 
     }
