@@ -58,15 +58,12 @@ public class Questions {
         int id = 0;
         for (Movie movie : moviesList) {
             for (int j = 0; j < 4; j++) {
-                System.out.println(endGame.get(id).getAnswer());
-                System.out.println(movie.getAnswers());
                 if (endGame.get(id).getAnswer().equals(movie.getRightAnswers())) {
                     win.add(id);
                 }
                 id++;
             }
         }
-        System.out.println(getWin().get(0));
     }
 
     public List<Integer> getWin() {

@@ -1,6 +1,7 @@
-/home/wilder/Documents/Hacka 1/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movies.java
-/home/wilder/Documents/Hacka 1/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/controller/HackloweenController.java
-/home/wilder/Documents/Hacka 1/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Player.java
-/home/wilder/Documents/Hacka 1/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movie.java
-/home/wilder/Documents/Hacka 1/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/DeathQuizApplication.java
-/home/wilder/Documents/Hacka 1/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Questions.java
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/DeathQuizApplication.java
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Questions.java
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movie.java
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Player.java
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/Movies.java
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/controller/HackloweenController.java
+/home/wilder/JavaProjects/hackathon/DeathQuiz/src/main/java/fr/wcs/DeathQuiz/model/EndGame.java

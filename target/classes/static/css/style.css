@@ -46,6 +46,14 @@ p {
     margin-bottom: 20px;
 }
 
+#time-remaining {
+    font-family: Creepster, serif;
+    color: #6e9434;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .overlay-text {
     position: fixed;
     top: 0;
@@ -161,21 +169,21 @@ p {
 .endgame_container div:nth-child(16n - 1) .endgame_label,
 .endgame_container div:nth-child(16n - 2) .endgame_label,
 .endgame_container div:nth-child(16n - 3) .endgame_label {
-    background-color: #6e9434;
+    border-color: steelblue;
 }
 
 .endgame_container div:nth-child(16n - 4) .endgame_label,
 .endgame_container div:nth-child(16n - 5) .endgame_label,
 .endgame_container div:nth-child(16n - 6) .endgame_label,
 .endgame_container div:nth-child(16n - 7) .endgame_label {
-    background-color: blue;
+    border-color: forestgreen;
 }
 
 .endgame_container div:nth-child(16n - 8) .endgame_label,
 .endgame_container div:nth-child(16n - 9) .endgame_label,
 .endgame_container div:nth-child(16n - 10) .endgame_label,
 .endgame_container div:nth-child(16n - 11) .endgame_label {
-    background-color: orangered;
+    border-color: orangered;
 }
 
 
@@ -185,8 +193,10 @@ p {
 
 .endgame_checkbox:checked + .endgame_label {
     color: #000000;
-    background-color: white;
+    background-color: rgb(216, 31, 31);
 }
+
+
 
 .faux {
     cursor: initial;
@@ -200,7 +210,7 @@ p {
 .questionh1 {
     color:rgb(238, 238, 238);
     text-shadow:1px 1px #da1818;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-family: 'Times New Roman', serif;
     margin-top: 20px;
 }

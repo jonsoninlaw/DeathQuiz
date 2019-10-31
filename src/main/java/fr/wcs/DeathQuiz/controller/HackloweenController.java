@@ -77,9 +77,14 @@ public class HackloweenController {
     @GetMapping("/endGame")
     public String endGame(Model out, @RequestParam(name = "endgame", defaultValue = "99") List<Integer> answers) {
         out.addAttribute("question", questions);
+        for (int elt : questions.getWin()) {
+            System.out.println(elt);
+        }
         if (answers.get(0) == 99) {
+
             return "endgame";
         }
+
 
         boolean win = false;
 
@@ -93,7 +98,6 @@ public class HackloweenController {
                 }
             }
         }
-
         return win ? "win" : "loose";
 
     }
