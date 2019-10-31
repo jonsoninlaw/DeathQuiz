@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" />
+    <script src="script2.js" th:src="@{/javascript/script.js}" async></script>
     <title>DeathQuizz</title>
 </head>
 <body>
+<audio id="my_audio" src="Assets/Audio/creepy.mp3" loop="loop"></audio>
+<div id="game-over-text" class="overlay-text visible">
+    you loose !
+    <img th:src="@{https://media.giphy.com/media/l2YWAhT03HURNvP9e/giphy.gif}">
+</div>
+
 <h1 th:text="|Perdu !|">title</h1>
 <div class="parchemin">
     <p th:text="|Dommage ! |">En entrant sur DeathQuizz, vous vous engagez</p>

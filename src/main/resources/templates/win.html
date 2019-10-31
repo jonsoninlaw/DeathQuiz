@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" />
+    <script src="../static/javascript/script2.js" th:src="@{/javascript/script.js}" async></script>
     <title>DeathQuizz</title>
 </head>
 <body class="win">
+
+<div id="game-over-text" class="overlay-text visible">
+    you win !
+    <img th:src="@{https://media.giphy.com/media/ch7ufFmnkoerDu3Sty/giphy.gif}" src="https://media.giphy.com/media/ch7ufFmnkoerDu3Sty/giphy.gif">
+</div>
+
 <h1>Bien joué !</h1>
 <div class="parchemin">
     <div class="Btn">
