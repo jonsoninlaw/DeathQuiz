@@ -11,11 +11,13 @@
 <h1 th:text="|Death Quizz|">title</h1>
 <div class="parchemin">
     <p th:text="|Attention|"> Attention</p>
-    <p th:text="|En entrant sur DeathQuizz, vous vous engagez à vendre votre âme au diable. En appuyant sur le bouton continuer, |">En entrant sur DeathQuizz, vous vous engagez</p>
-        <form class="form" id="nameForm" th:action="@{/question}" method="get">
+    <p th:text="|En entrant sur DeathQuizz, vous vous engagez à ne pas poursuivre en justice DeathQuizz suite à des séquelles physiques et/ou psychologiques. En appuyant sur le bouton ci-dessous, vous entrez en enfer.|">En entrant sur DeathQuizz, vous vous engagez</p>
+    <p id='blink'>Êtes-vous inconscient ?</p>
+    <form class="form" id="nameForm" th:action="@{/question}" method="get">
             <input type="text" name="username" required>
             <input class="button1" type="submit" value="Je suis inconscient">
         </form>
 </div>
+<script type="text/javascript" th:src="@{/js/blink.js}"></script>
 </body>
 </html>
