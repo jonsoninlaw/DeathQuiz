@@ -1,12 +1,14 @@
 package fr.wcs.DeathQuiz.controller;
 
 import fr.wcs.DeathQuiz.model.Movie;
+import fr.wcs.DeathQuiz.model.Player;
 import fr.wcs.DeathQuiz.model.Questions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.swing.text.PlainDocument;
 
 
 @Controller
@@ -14,7 +16,7 @@ public class HackloweenController {
 
     private static Questions questions = new Questions();
     private static int currentQuestion = 0;
-    private static final String HACKLOWEEN_URL = "https://hackathon-wild-hackoween.herokuapp.com/";
+    Player player = new Player();
 
     @GetMapping("/")
     public String index() {
@@ -54,17 +56,25 @@ public class HackloweenController {
     }
 
     @GetMapping("/nextQuestion")
-    public String nextQuestion(Model test) {
+    public String nextQuestion(Model out) {
 
         String right = "none";
         String wrong = "none";
         currentQuestion ++;
         Movie movie = questions.getMoviesList()[currentQuestion];
 
-        test.addAttribute("question", movie);
-        test.addAttribute("right", right);
-        test.addAttribute("wrong", wrong);
+        out.addAttribute("question", movie);
+        out.addAttribute("right", right);
+        out.addAttribute("wrong", wrong);
         return "question";
+
+    }
+
+    @GetMapping("/endGame")
+    public String endGame(Model test) {
+
+        test.addAttribute("question", questions);
+        return "endgame";
 
     }
 }

@@ -80,6 +80,11 @@ p {
 
 }
 
+.checkbox {
+    width: auto;
+    height: auto;
+}
+
 .faux {
     cursor: initial;
 }

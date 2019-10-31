@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <link href="../static/css/style.css" rel="stylesheet" th:href="@{/css/style.css}"/>
+    <title>DeathQuizz</title>
+</head>
+
+<body>
+<div class="question">
+    <h1 class="questionh1">Can you remind them all ?</h1>
+    <div class="answers">
+        <div class="allbtn">
+            <div class="Btn">
+                <form method="get" th:action="@{/question}">
+                    <div th:each="id : ${question.allAnswers}">
+                    <input name="answer" th:value="${id}" th:id="${id}" type="hidden"/>
+                        <label class="button1 choice" th:text="${id}"></label>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

@@ -22,10 +22,10 @@ public class Movie {
     private List<String> directorAnswers = new ArrayList<>();
     private List<String> countryAnswers = new ArrayList<>();
     private String[] fakeYearAnswers = {"It was never released", "2023", "Some day", "Who knows", "19999", "23401375", "1999 before J.C", "In the year 2525"};
-    private String[] fakeDirectorAnswers = {"John Smith", "John Doe", "Jonathan Gendre", "Jacky and Michel", "Michael Jackson", "You", "Some talented person", "Not you", "Someone"};
-    private String[] fakeCountryAnswers = {"Neverland", "Nevermindland", "Lala Land", "Mushroom Kingdom", "Hyrule", "Babar's Kingdom", "Groland", "Disneyland"};
-    private Object[] rightAnswers = new Object[3];
-    private Object[] answers = {yearAnswers, directorAnswers, countryAnswers};
+    private String[] fakeDirectorAnswers = {"Homer Simpson", "Wallace and Gromit", "John Smith", "John Doe", "Jonathan Gendre", "Jacky and Michel", "Michael Jackson", "You", "Some talented person", "Not you", "Someone"};
+    private String[] fakeCountryAnswers = {"Neverland", "Asgard", "Nevermindland", "Lala Land", "Mushroom Kingdom", "Hyrule", "Babar's Kingdom", "Groland", "Disneyland"};
+    private String[] rightAnswers = new String[3];
+    private List<String>[] answers = new List[]{yearAnswers, directorAnswers, countryAnswers};
 
     public Movie() {
     }
@@ -34,14 +34,12 @@ public class Movie {
         return question;
     }
 
-    public Object getAnswers() {
-        for (int i = 0; i < 3; i++) {
-        }
+    public List<String> getAnswers() {
         return answers[questionIndex];
     }
 
     public void setRightAnswers() {
-        this.rightAnswers[0] = this.year;
+        this.rightAnswers[0] = this.year + "";
         this.rightAnswers[1] = this.director.replace("_", " ");
         this.rightAnswers[2] = this.country.replace("_", " ");
     }
@@ -94,7 +92,7 @@ public class Movie {
         Collections.shuffle(countryAnswers);
     }
 
-    public Object getRightAnswers() {
+    public String getRightAnswers() {
         return rightAnswers[questionIndex];
     }
 

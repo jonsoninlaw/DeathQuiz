@@ -11,6 +11,7 @@ import reactor.core.publisher.Mono;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Questions {
@@ -21,10 +22,18 @@ public class Questions {
     private Movie movie3 = generateMovie(this.movie3);
     private Movie movie4 = generateMovie(this.movie4);
     private Movie movie5 = generateMovie(this.movie5);
+    private Movie movie6 = generateMovie(this.movie6);
+    private Movie movie7 = generateMovie(this.movie7);
+    private Movie movie8 = generateMovie(this.movie8);
+    private Movie movie9 = generateMovie(this.movie9);
+    private Movie movie10 = generateMovie(this.movie10);
     private Movies movies;
-    private Movie[] moviesList = {movie1, movie2, movie3, movie4, movie5};
+    private Movie[] moviesList = {movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10};
+
+    private List<String> allAnswers = new ArrayList<>();
 
     public Questions() {
+
         movies = generateAllMovies(movies);
         for (Movie movie : moviesList) {
             movie.chooseQuestion();
@@ -33,6 +42,20 @@ public class Questions {
             movie.generateCountryAnswers(movies.getCountry());
             movie.setRightAnswers();
         }
+        for (Movie movie : moviesList) {
+            allAnswers.add(movie.getAnswers().get(0));
+            allAnswers.add(movie.getAnswers().get(1));
+            allAnswers.add(movie.getAnswers().get(2));
+            allAnswers.add(movie.getAnswers().get(3));
+        }
+    }
+
+    public List<String> getAllAnswers() {
+        return allAnswers;
+    }
+
+    public String[] getAnswersId() {
+        return answersId;
     }
 
     public Movie[] getMoviesList() {
