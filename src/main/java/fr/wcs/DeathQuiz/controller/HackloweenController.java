@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.swing.text.PlainDocument;
 import java.util.Scanner;
+import java.util.List;
 
 
 @Controller
@@ -31,6 +32,7 @@ public class HackloweenController {
         String right = "none";
         String wrong = "none";
         Object rightAnswer;
+
         Movie movie = questions.getMoviesList()[currentQuestion];
         if (currentQuestion == 0) {
             rightAnswer = questions.getMoviesList()[0].getRightAnswers() + "";
@@ -60,7 +62,10 @@ public class HackloweenController {
 
     @GetMapping("/nextQuestion")
     public String nextQuestion(Model out) {
-
+        if (currentQuestion == 9) {
+            out.addAttribute("question", questions);
+            return "redirect:/endGame";
+        }
         String right = "none";
         String wrong = "none";
         currentQuestion ++;
@@ -70,14 +75,36 @@ public class HackloweenController {
         out.addAttribute("right", right);
         out.addAttribute("wrong", wrong);
         return "question";
-
     }
 
     @GetMapping("/endGame")
-    public String endGame(Model test) {
+    public String endGame(Model out, @RequestParam(name = "endgame", defaultValue = "0") List<Integer> answers) {
 
-        test.addAttribute("question", questions);
-        return "endgame";
+        if (answers.size() == 1) {
+            answers.clear();
+        }
+        for (int elt : answers) {
+            System.out.println(elt);
+        }
+        for (int elt : questions.getWin()) {
+            System.out.println("to win : " + elt);
+        }
+
+        boolean win = false;
+
+        if (answers.size() != 0) {
+            for (int i = 0; i < 10; i++) {
+                if (!questions.getWin().get(i).equals(answers.get(i))) {
+                    win = false;
+                }
+                else {
+                    win = true;
+                }
+            }
+        }
+        out.addAttribute("question", questions);
+
+        return win ? "index" : "endgame";
 
     }
 }

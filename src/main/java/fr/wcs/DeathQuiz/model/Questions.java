@@ -29,8 +29,8 @@ public class Questions {
     private Movie movie10 = generateMovie(this.movie10);
     private Movies movies;
     private Movie[] moviesList = {movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10};
-
-    private List<String> allAnswers = new ArrayList<>();
+    private List<EndGame> endGame = new ArrayList<>();
+    private List<Integer> win = new ArrayList<>();
 
     public Questions() {
 
@@ -41,17 +41,40 @@ public class Questions {
             movie.generateDirectorAnswers(movies.getDirector());
             movie.generateCountryAnswers(movies.getCountry());
             movie.setRightAnswers();
+
         }
+        for (int i = 0; i < 40; i++) {
+            for (Movie movie : moviesList) {
+                endGame.add(new EndGame(movie.getAnswers().get(0), i));
+                i++;
+                endGame.add(new EndGame(movie.getAnswers().get(1), i));
+                i++;
+                endGame.add(new EndGame(movie.getAnswers().get(2), i));
+                i++;
+                endGame.add(new EndGame(movie.getAnswers().get(3), i));
+                i++;
+            }
+        }
+        int id = 0;
         for (Movie movie : moviesList) {
-            allAnswers.add(movie.getAnswers().get(0));
-            allAnswers.add(movie.getAnswers().get(1));
-            allAnswers.add(movie.getAnswers().get(2));
-            allAnswers.add(movie.getAnswers().get(3));
+            for (int j = 0; j < 4; j++) {
+                System.out.println(endGame.get(id).getAnswer());
+                System.out.println(movie.getAnswers());
+                if (endGame.get(id).getAnswer().equals(movie.getRightAnswers())) {
+                    win.add(id);
+                }
+                id++;
+            }
         }
+        System.out.println(getWin().get(0));
     }
 
-    public List<String> getAllAnswers() {
-        return allAnswers;
+    public List<Integer> getWin() {
+        return win;
+    }
+
+    public List<EndGame> getEndGame() {
+        return endGame;
     }
 
     public Movie[] getMoviesList() {
