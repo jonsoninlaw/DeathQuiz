@@ -1,36 +1,80 @@
 package fr.wcs.DeathQuiz.controller;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import fr.wcs.DeathQuiz.model.Movie;
+import fr.wcs.DeathQuiz.model.Player;
 import fr.wcs.DeathQuiz.model.Questions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import java.io.IOException;
+import javax.swing.text.PlainDocument;
+
 
 @Controller
 public class HackloweenController {
 
-    //private static Questions questions = new Questions();
-
-    private static final String HACKLOWEEN_URL = "https://hackathon-wild-hackoween.herokuapp.com/";
+    private static Questions questions = new Questions();
+    private static int currentQuestion = 0;
+    Player player = new Player();
 
     @GetMapping("/")
     public String index() {
         return "index";
     }
 
-    @GetMapping("/question1")
-    public String question1(Model out) {
-        Questions questions = new Questions();
-        out.addAttribute("question", questions.getMovie1());
+    @GetMapping("/question")
+    public String question(Model out, @RequestParam(name = "answer", required = false, defaultValue = "") String answer) {
+
+        String right = "none";
+        String wrong = "none";
+        Object rightAnswer;
+        Movie movie = questions.getMoviesList()[currentQuestion];
+        if (currentQuestion == 0) {
+            rightAnswer = questions.getMoviesList()[0].getRightAnswers() + "";
+        }
+        else {
+            rightAnswer = questions.getMoviesList()[currentQuestion].getRightAnswers() + "";
+        }
+        if (answer.length() != 0) {
+            if (rightAnswer.equals(answer)) {
+                right = "block";
+            }
+            else {
+                wrong = "block";
+            }
+        }
+        System.out.println(rightAnswer);
+        System.out.println(answer);
+
+
+        out.addAttribute("question", movie);
+        out.addAttribute("right", right);
+        out.addAttribute("wrong", wrong);
         return "question";
-        //return questions.getMovie1().getTitle() + " ------- " + questions.getMovie1().getQuestion() + " ------- " + questions.getMovie1().getAnswers() + " --- The right answer is : " + questions.getMovie1().getRightAnswers();
 
     }
 
+    @GetMapping("/nextQuestion")
+    public String nextQuestion(Model out) {
+
+        String right = "none";
+        String wrong = "none";
+        currentQuestion ++;
+        Movie movie = questions.getMoviesList()[currentQuestion];
+
+        out.addAttribute("question", movie);
+        out.addAttribute("right", right);
+        out.addAttribute("wrong", wrong);
+        return "question";
+
+    }
+
+    @GetMapping("/endGame")
+    public String endGame(Model test) {
+
+        test.addAttribute("question", questions);
+        return "endgame";
+
+    }
 }
