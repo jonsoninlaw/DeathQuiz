@@ -14,11 +14,14 @@
     <div class="answers">
         <div class="allbtn">
             <div class="Btn">
-                <form method="get" th:action="@{/question}">
-                    <div th:each="id : ${question.allAnswers}">
-                    <input name="answer" th:value="${id}" th:id="${id}" type="hidden"/>
-                        <label class="button1 choice" th:text="${id}"></label>
+                <form class="endgame_form" method="get" th:action="@{/endGame}">
+                    <div class="endgame_container">
+                    <div th:each="endgame : ${question.endGame}">
+                        <input class="endgame_checkbox" name="endgame" th:value="${endgame.id}" th:id="${endgame.id}" type="checkbox"/>
+                        <label class="endgame_label" th:text="${endgame.answer}" th:for="${endgame.id}"></label>
                     </div>
+                    </div>
+                    <input class="button1" id="endgame" th:value="Valider" type="submit">
                 </form>
             </div>
 
