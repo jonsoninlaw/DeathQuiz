@@ -18,10 +18,12 @@ public class Movie {
     private String question;
     private int questionIndex;
     private String[] questions = {"What's this movie's release date ?", "Who directed this movie ?", "Do you know where this movie comes from ?"};
-    private List<Integer> yearAnswers = new ArrayList<>();
+    private List<String> yearAnswers = new ArrayList<>();
     private List<String> directorAnswers = new ArrayList<>();
     private List<String> countryAnswers = new ArrayList<>();
-    //private String[] funAnswers = {""};
+    private String[] fakeYearAnswers = {"It was never released", "2023", "Some day", "Who knows", "19999", "23401375", "1999 before J.C", "In the year 2525"};
+    private String[] fakeDirectorAnswers = {"John Smith", "John Doe", "Jonathan Gendre", "Jacky and Michel", "Michael Jackson", "You", "Some talented person", "Not you", "Someone"};
+    private String[] fakeCountryAnswers = {"Neverland", "Nevermindland", "Lala Land", "Mushroom Kingdom", "Hyrule", "Babar's Kingdom", "Groland", "Disneyland"};
     private Object[] rightAnswers = new Object[3];
     private Object[] answers = {yearAnswers, directorAnswers, countryAnswers};
 
@@ -52,13 +54,14 @@ public class Movie {
 
     public void generateYearAnswers(int[] allYears) {
         Random random = new Random();
-        this.yearAnswers.add(this.year);
-        for (int i = 0; i < 3; i++) {
+        this.yearAnswers.add(this.year + "");
+        this.yearAnswers.add(this.fakeYearAnswers[random.nextInt(fakeYearAnswers.length)]);
+        for (int i = 0; i < 2; i++) {
             int randYear = allYears[random.nextInt(82)];
             while (yearAnswers.contains(randYear)) {
                 randYear = allYears[random.nextInt(82)];
             }
-            this.yearAnswers.add(randYear);
+            this.yearAnswers.add(randYear + "");
         }
         Collections.shuffle(yearAnswers);
     }
@@ -66,7 +69,8 @@ public class Movie {
     public void generateDirectorAnswers(String[] allDirectors) {
         Random random = new Random();
         this.directorAnswers.add(this.director.replace("_", " "));
-        for (int i = 0; i < 3; i++) {
+        this.directorAnswers.add(this.fakeDirectorAnswers[random.nextInt(fakeDirectorAnswers.length)]);
+        for (int i = 0; i < 2; i++) {
             String randDirector = allDirectors[random.nextInt(82)].replace("_", " ");
             while (directorAnswers.contains(randDirector)) {
                 randDirector = allDirectors[random.nextInt(82)].replace("_", " ");
@@ -79,7 +83,8 @@ public class Movie {
     public void generateCountryAnswers(String[] allCountries) {
         Random random = new Random();
         this.countryAnswers.add(this.country.replace("_", " "));
-        for (int i = 0; i < 3; i++) {
+        this.countryAnswers.add(this.fakeCountryAnswers[random.nextInt(fakeCountryAnswers.length)]);
+        for (int i = 0; i < 2; i++) {
             String randCountry = allCountries[random.nextInt(82)].replace("_", " ");
             while (countryAnswers.contains(randCountry)) {
                 randCountry = allCountries[random.nextInt(82)].replace("_", " ");
