@@ -6,9 +6,11 @@ import fr.wcs.DeathQuiz.model.Questions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.swing.text.PlainDocument;
+import java.util.Scanner;
 
 
 @Controller
@@ -24,7 +26,7 @@ public class HackloweenController {
     }
 
     @GetMapping("/question")
-    public String question(Model out, @RequestParam(name = "answer", required = false, defaultValue = "") String answer) {
+    public String question(Model out, @RequestParam(name = "answer", required = false, defaultValue = "") String answer, @RequestParam(name = "username", required=false, defaultValue = "") String name) {
 
         String right = "none";
         String wrong = "none";
@@ -51,6 +53,7 @@ public class HackloweenController {
         out.addAttribute("question", movie);
         out.addAttribute("right", right);
         out.addAttribute("wrong", wrong);
+        out.addAttribute("name", name);
         return "question";
 
     }

@@ -1,5 +1,6 @@
 fr/wcs/DeathQuiz/model/Movie.class
 fr/wcs/DeathQuiz/DeathQuizApplication.class
 fr/wcs/DeathQuiz/model/Questions.class
+fr/wcs/DeathQuiz/model/Player.class
 fr/wcs/DeathQuiz/model/Movies.class
 fr/wcs/DeathQuiz/controller/HackloweenController.class
